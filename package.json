@@ -3,6 +3,7 @@
     "aedes": "^0.48.1",
     "aedes-server-factory": "^0.2.1",
     "mqtt": "^4.3.7",
+    "nodemon": "^2.0.20",
     "websocket-stream": "^5.5.2"
   },
   "name": "mqtt",
@@ -10,7 +11,7 @@
   "main": "broker.js",
   "devDependencies": {},
   "scripts": {
-    "start": "node broker.js",
+    "start": "nodemon broker.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
