@@ -1,0 +1,14 @@
+{
+    "builds": [
+      {
+        "src": "./broker.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/broker.js"
+      }
+    ]
+  }
