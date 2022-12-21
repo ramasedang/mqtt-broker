@@ -1,15 +1,10 @@
-import Aedes from "aedes";
-import { createServer } from "aedes-server-factory";
+const aedes = require("aedes")();
+const httpServer = require("http").createServer();
+const ws = require("websocket-stream");
+const port = process.env.PORT || 80;
 
-const aedes = Aedes();
-const server = createServer(aedes, { ws: true });
-const PORT = process.env.PORT || 1883;
+ws.createServer({ server: httpServer }, aedes.handle);
 
-const broker_1 = async () => {
-    server.listen(PORT, function () {
-        console.log("Broker1 started and listening on port 1883");
-    });
-}
-broker_1();
-
-
+httpServer.listen(port, () => {
+  console.log("websocket server listening on port ", port);
+});
